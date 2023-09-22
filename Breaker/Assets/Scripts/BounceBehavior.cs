@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SimpleMoveAction : MonoBehaviour
+public class BounceBehavior : MonoBehaviour
 {
     [SerializeField] float DropSpeed = 10f;
     Rigidbody rb;
@@ -31,4 +31,7 @@ public class SimpleMoveAction : MonoBehaviour
        
         rb.velocity = direction * Mathf.Max(speed, 2f);
     }
+    
+    
+    
 }
