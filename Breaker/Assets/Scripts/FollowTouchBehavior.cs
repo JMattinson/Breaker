@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,6 +30,16 @@ public class FollowTouchBehavior : MonoBehaviour
    }
 
    private void TouchPressed(InputAction.CallbackContext context)
+   {
+      Vector3 position = touchPositionAction.ReadValue<Vector2>();
+      position.z = 30;
+      position = Camera.main.ScreenToWorldPoint(position);
+      position.y = followTarget.transform.position.y;
+      position.z = followTarget.transform.position.z;
+      followTarget.transform.position = position;
+   }
+
+   private void FixedUpdate()
    {
       Vector3 position = touchPositionAction.ReadValue<Vector2>();
       position.z = 30;
