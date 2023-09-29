@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BounceBehavior : MonoBehaviour
 {
-    [SerializeField] float DropSpeed = 10f;
+    public FloatData DropSpeed;
+    
     Rigidbody rb;
     Vector2 lastVelocity;
     
@@ -13,15 +14,15 @@ public class BounceBehavior : MonoBehaviour
 
         // Apply your initial velocity on spawn.
         // Then you don't need to transform the object every update tick.
-        rb.velocity = transform.up * -DropSpeed;
+        rb.velocity = transform.up * -DropSpeed.value;
     }
     
-    // Do this in FixedUpdate, so you're caching the velocity in every
-    // physics step, rather than only on rendered frames.
+    
     public void FixedUpdate()
     {
         lastVelocity = rb.velocity;
     }
+   
     
     void OnCollisionEnter(Collision collision)
     {

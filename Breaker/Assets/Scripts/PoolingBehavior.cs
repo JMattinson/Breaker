@@ -13,34 +13,53 @@ public class PoolingBehavior : MonoBehaviour
     private WaitForSeconds wfsObj;
     private int i;
     public bool canRun = true;
+    public int spawnLimit;
+    public int curSpawned = 0;
     public Vector3DataList Spawns;
 
     IEnumerator Start()
     {
+        spawnLimit = poolList.Count-1;
 
         wfsObj = new WaitForSeconds(seconds);
         while (canRun)
         {
-            Instantiate(poolList[i]);
-            yield return wfsObj;
-            poolList[i].position = Spawns.vector3List[i].value;
-            print("Spawning" + i);
-            poolList[i].GameObject().SetActive(true);
-            i++;
+            
+            CheckLimit();
             if (i > poolList.Count - 1)
             {
                 i = 0;
-                //canRun = false;
-
             }
+            Instantiate(poolList[i]);
+            yield return wfsObj;
+            print("Spawning" + i);
+            
+               
+                if (poolList[i].GameObject().activeSelf==false)
+                {
 
-
-        }
+                    poolList[i].position = Spawns.vector3List[i].value;
+                    
+                    poolList[i].GameObject().SetActive(true);
+                    
+                    curSpawned++;
+                }
+                i++;
+            }
+            
+           
         
+    }
+    public void EnemyDespawned()
+    {
+        curSpawned--;
     }
 
     public void CheckLimit()
     {
-        
+        if (curSpawned>=spawnLimit)
+        {
+            canRun = false;
+        }
     }
 }
