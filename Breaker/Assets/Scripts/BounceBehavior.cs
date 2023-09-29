@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class BounceBehavior : MonoBehaviour
 {
+    //This script manages the ball's bounce angle & initial speed.
     public FloatData DropSpeed;
     
     Rigidbody rb;
@@ -12,7 +13,7 @@ public class BounceBehavior : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Apply your initial velocity on spawn.
+        // Applies your initial velocity on spawn.
         // Then you don't need to transform the object every update tick.
         rb.velocity = transform.up * -DropSpeed.value;
     }

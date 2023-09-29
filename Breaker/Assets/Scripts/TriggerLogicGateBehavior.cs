@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-
+// works near identically to the collision logic gate, but uses triggers instead.
 
 public class TriggerLogicGateBehavior : MonoBehaviour
 {

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+// This script captures the X position of taps / clicks, and moves a target object to that X coordinate.
 
 public class FollowTouchBehavior : MonoBehaviour
 {
