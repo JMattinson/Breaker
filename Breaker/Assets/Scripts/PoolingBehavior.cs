@@ -36,8 +36,11 @@ public class PoolingBehavior : MonoBehaviour
 
 
         }
+        
+    }
 
-
-
+    public void CheckLimit()
+    {
+        
     }
 }

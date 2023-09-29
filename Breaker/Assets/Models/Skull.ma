@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Skull.ma
-//Last modified: Tue, Sep 26, 2023 11:59:12 AM
+//Last modified: Tue, Sep 26, 2023 12:13:18 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "526FDB1F-4129-8E58-7D49-419B6F9DDD16";
+fileInfo "UUID" "B06C9DC2-41B0-0EF5-22E2-45A5E0536B64";
 createNode transform -s -n "persp";
 	rename -uid "92DCAE37-4834-D629-917A-9CAF76C5649B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1128.5423127552417 434.06333071328777 71.00186408835151 ;
-	setAttr ".r" -type "double3" -21.000000000002725 273.59999999997763 5.065342197078708e-14 ;
+	setAttr ".t" -type "double3" -310.66604275858032 1079.2071670110006 453.71631225019973 ;
+	setAttr ".r" -type "double3" -62.999999999964018 325.60000000000639 3.8546874922055068e-15 ;
 	setAttr ".rpt" -type "double3" -1.0148499579364956e-15 -7.8720815924890183e-16 -4.8622590536291132e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D4121A12-4016-5D9E-490B-F19A9D4CD067";
